@@ -50,3 +50,19 @@ gameBoard.addEventListener('click', (event) => {
         selectedPiece.classList.add('selected');
     }
 });
+
+function canMove() {
+    const startRow = parseInt(piece.parentElement.dataset.row);
+    const startCol = parseInt(piece.parentElement.dataset.col);
+    const targetRow = parseInt(targetCell.dataset.row);
+    const targetCol = parseInt(targetCell.dataset.col);
+    const rowDiff = targetRow  - startRow;
+    const colDiff = targetCol - startCol;
+    if (currentPlayer = 'red' && rowDiff === 1 && Math.abs(colDiff) === 1) {
+        return true;
+    }
+    if (currentPlayer = 'black' && rowDiff === -1 && Math.abs(colDiff) === 1) {
+        return true;
+    }
+    return false;
+}
