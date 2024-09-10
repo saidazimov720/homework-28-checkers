@@ -90,5 +90,20 @@ function movePiece(piece, targetCell) {
     targetCell.appendChild(piece);
 }
 function jumpPiece(piece, targetCell) {
-    
+    const startRow = parseInt(piece.parentElement.dataset.row);
+  const startCol = parseInt(piece.parentElement.dataset.col);
+  const targetRow = parseInt(targetCell.dataset.row);
+  const targetCol = parseInt(targetCell.dataset.col);
+  const rowDiff = targetRow - startRow;
+  const colDiff = targetCol - startCol;
+  if (Math.abs(rowDiff) === 2 && Math.abs(colDiff) === 2) {
+    const middleRow = (startRow + targetRow) / 2;
+    const middleCol = (startCol + targetCol) / 2;
+    const middleCell = getCell(middleRow, middleCol);
+    const middlePiece = middleCell.querySelector('.piece');
+    if (middlePiece && middlePiece.classList.contains(currentPlayer === 'red' ? 'black' : 'red')) {
+      return true;
+    }
+  }
+  return false;
 }
