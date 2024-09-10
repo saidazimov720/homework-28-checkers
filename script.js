@@ -103,3 +103,7 @@ function jumpPiece(piece, targetCell) {
   }
   movePiece(piece, targetCell);
 }
+
+function switchPlayer() {
+    currentPlayer = currentPlayer === 'red' ? 'black': 'red';
+}
