@@ -7,3 +7,13 @@ body{
     margin: 0;
     padding: 20px;
 }
+h1{
+    margin-bottom: 20px;
+}
+#gameBoard{
+    display: grid;
+    grid-template-columns: repeat(8, 60px);
+    grid-template-rows: repeat(8, 60px);
+    gap: 0;
+    border: 2px solid #333;
+}
