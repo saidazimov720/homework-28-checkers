@@ -107,3 +107,7 @@ function jumpPiece(piece, targetCell) {
 function switchPlayer() {
     currentPlayer = currentPlayer === 'red' ? 'black': 'red';
 }
+
+function getCell(row, col) {
+    return document.querySelector(`.cell[data-row='${row}'][data-col='${col}']`);
+}
