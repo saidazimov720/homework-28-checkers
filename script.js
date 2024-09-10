@@ -111,3 +111,4 @@ function switchPlayer() {
 function getCell(row, col) {
     return document.querySelector(`.cell[data-row='${row}'][data-col='${col}']`);
 }
+createBoard();
