@@ -51,7 +51,7 @@ gameBoard.addEventListener('click', (event) => {
     }
 });
 
-function canMove() {
+function canMove(piece, targetCell) {
     const startRow = parseInt(piece.parentElement.dataset.row);
     const startCol = parseInt(piece.parentElement.dataset.col);
     const targetRow = parseInt(targetCell.dataset.row);
@@ -67,7 +67,7 @@ function canMove() {
     return false;
 }
 
-function canJump() {
+function canJump(piece, targetCell) {
     const startRow = parseInt(piece.parentElement.dataset.row);
     const startCol = parseInt(piece.parentElement.dataset.col);
     const targetRow = parseInt(targetCell.dataset.row);
@@ -88,4 +88,7 @@ function canJump() {
 
 function movePiece(piece, targetCell) {
     targetCell.appendChild(piece);
+}
+function jumpPiece(piece, targetCell) {
+    
 }
