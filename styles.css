@@ -41,3 +41,6 @@ h1{
 .piece.black{
     background-color: black;
 }
+.selected{
+    outline: 3px solid yellow;
+}
