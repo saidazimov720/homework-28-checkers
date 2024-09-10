@@ -24,3 +24,9 @@ function createBoard() {
         }
     }
 }
+
+function addPiece(cell, color) {
+    const piece = document.createElement('div');
+    piece.classList.add('piece', color);
+    cell.appendChild(piece);
+}
