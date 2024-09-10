@@ -30,3 +30,23 @@ function addPiece(cell, color) {
     piece.classList.add('piece', color);
     cell.appendChild(piece);
 }
+
+gameBoard.addEventListener('click', (event) => {
+    const cell = event.target.closest('.cell.dark');
+    if(!cell) return;
+    const piece = cell.querySelector('.piece');
+    if (selectedPiece) {
+        if (!piece && canMove(selectedPiece, cell)) {
+            movePiece(selectedPiece, cell);
+            switchPlayer();
+        }else if(!piece && canJump(selectedPiece, cell)){
+            jumpPiece(selectedPiece, cell);
+            switchPlayer();
+        }
+        selectedPiece.classList.remove('selected');
+        selectedPiece = null;
+    }else if(piece && piece.classList.contains(currentPlayer)){
+        selectedPiece = piece;
+        selectedPiece.classList.add('selected');
+    }
+});
