@@ -28,3 +28,10 @@ h1{
 .cell.light{
     background-color: #f5deb3;
 }
+.piece{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    margin: auto;
+    display: block;
+}
