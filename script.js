@@ -85,3 +85,7 @@ function canJump() {
     }
     return false;
 }
+
+function movePiece(piece, targetCell) {
+    targetCell.appendChild(piece);
+}
