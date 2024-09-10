@@ -25,3 +25,6 @@ h1{
 .cell.dark{
     background-color: #8b4513;
 }
+.cell.light{
+    background-color: #f5deb3;
+}
