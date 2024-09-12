@@ -63,6 +63,9 @@ function canMove(piece, targetCell) {
   const rowDiff = targetRow - startRow;
   const colDiff = targetCol - startCol;
 
+  if(piece.classList.contains('king')){
+    return Math.abs(rowDiff) === 1 && Math.abs(colDiff) === 1;
+  }
   if (currentPlayer === 'red' && rowDiff === 1 && Math.abs(colDiff) === 1) {
     return true;
   }
