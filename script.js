@@ -118,6 +118,13 @@ function switchPlayer() {
   currentPlayer = currentPlayer === 'red' ? 'black' : 'red';
 }
 
+function promoteToKing(piece) {
+  const row = parseInt(piece.parentElement.dataset.row);
+  if (currentPlayer === 'red' ) {
+    
+  }
+}
+
 function getCell(row, col) {
   return document.querySelector(`.cell[data-row='${row}'][data-col='${col}']`);
 }
