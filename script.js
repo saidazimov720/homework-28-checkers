@@ -120,8 +120,8 @@ function switchPlayer() {
 
 function promoteToKing(piece) {
   const row = parseInt(piece.parentElement.dataset.row);
-  if (currentPlayer === 'red' ) {
-    
+  if ((currentPlayer === 'red' && row === 7 )|| (currentPlayer === 'black' && row === 0)) {
+    piece.classList.add('king');
   }
 }
 
