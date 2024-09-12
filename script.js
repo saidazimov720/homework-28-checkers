@@ -40,9 +40,11 @@ gameBoard.addEventListener('click', (event) => {
   if (selectedPiece) {
     if (!piece && canMove(selectedPiece, cell)) {
       movePiece(selectedPiece, cell);
+      promoteToKing(selectedPiece);
       switchPlayer();
     } else if (!piece && canJump(selectedPiece, cell)) {
       jumpPiece(selectedPiece, cell);
+      promoteToKing(selectedPiece);
       switchPlayer();
     }
     selectedPiece.classList.remove('selected');
@@ -60,11 +62,11 @@ function canMove(piece, targetCell) {
   const targetCol = parseInt(targetCell.dataset.col);
   const rowDiff = targetRow - startRow;
   const colDiff = targetCol - startCol;
-  
+
   if (currentPlayer === 'red' && rowDiff === 1 && Math.abs(colDiff) === 1) {
     return true;
   }
-  
+
   if (currentPlayer === 'black' && rowDiff === -1 && Math.abs(colDiff) === 1) {
     return true;
   }
